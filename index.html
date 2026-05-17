@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kitchen Master Ultra</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 id="title">🍳 Kitchen Master</h1>
+
+<div class="controls">
+<button class="toggle" onclick="toggleLang()">🌐 Switch Language</button>
+<input id="search" placeholder="Search item...">
+<select id="filter">
+<option value="all">All</option>
+<option value="rice">Rice</option>
+<option value="dal">Dal</option>
+<option value="meat">Meat</option>
+<option value="veg">Vegetable</option>
+<option value="other">Other</option>
+</select>
+</div>
+
+<div id="list"></div>
+
+<div class="section">
+<h2 id="calcTitle">🧮 Water Calculator</h2>
+<select id="item">
+<option value="rice">Rice</option>
+<option value="dal">Dal</option>
+<option value="meat">Meat</option>
+<option value="chana">Chana</option>
+<option value="dough">Dough</option>
+</select>
+<input type="number" id="amount" placeholder="Enter amount">
+<button onclick="calc()">Calculate</button>
+<div id="result" style="text-align:center;font-size:22px;margin-top:10px"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
