@@ -1,5 +1,5 @@
 
-
+document.addEventListener("DOMContentLoaded", function () {
 
 let urdu = false;
 
@@ -76,7 +76,7 @@ const data = [
   { name: "Omelette", urdu: "آملیٹ", time: "10 min", pressure: "-", ratio: 1, cat: "breakfast" },
   { name: "Boiled Egg", urdu: "اُبلا انڈا", time: "8 min", pressure: "-", ratio: 1, cat: "breakfast" },
   { name: "Halwa Puri", urdu: "حلوہ پوری", time: "25 min", pressure: "-", ratio: 1, cat: "breakfast" },
-  { name: "Cholay", urdu: "چنے", time: "30 min", pressure: "-", ratio: 1, cat: "breakfast" }
+  { name: "Cholay", urdu: "چنے", time: "30 min", pressure: "-", ratio: 1, cat: "breakfast" },
 
 
 
@@ -423,4 +423,4 @@ window.onload = function () {
 //   show();
 //  }
 
-
+});
