@@ -3,8 +3,6 @@
 
 let urdu = false;
 
-const data = [
-
 
 
 

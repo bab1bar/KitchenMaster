@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kitchen Master Ultra</title>
@@ -8,7 +10,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<div class="app">  
 <h1 id="title">🍳 Kitchen Master</h1>
 
 <div class="controls">
@@ -38,6 +40,7 @@
 <input type="number" id="amount" placeholder="Enter amount">
 <button onclick="calc()">Calculate</button>
 <div id="result" style="text-align:center;font-size:22px;margin-top:10px"></div>
+</div>
 </div>
 
 <script src="script.js"></script>
