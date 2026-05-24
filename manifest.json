@@ -4,7 +4,7 @@
 
 {
   "name": "Kitchen Master",
-  "short_name": KM"App",
+  "short_name": "KM",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ff88ff",
