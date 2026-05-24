@@ -650,13 +650,8 @@ window.onload = function () {
 
 
 
-const container = document.getElementById("cards");
-
-// 1. Your JSON data
-const data = [
-  { name: "Tea" },
-  { name: "Coffee" }
-];
+const container = document.getElementById("card");
+  
 
 // 2. THIS is where your code goes 👇
 data.forEach(item => {
