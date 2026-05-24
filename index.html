@@ -14,6 +14,20 @@
 <div class="app">  
 <h1 id="title">🍳 Kitchen Master</h1>
 
+
+
+<!-- ⭐ MODERN ALERT POPUP -->
+<div id="overlay" class="overlay">
+  <div class="modal">
+    <h2>👋 Welcome!</h2>
+    <p id="msgText"></p>
+    <button onclick="closeModal()">OK</button>
+  </div>
+</div>
+
+
+
+
 <div class="controls">
 <button class="toggle" onclick="toggleLang()">🌐 Switch Language</button>
 <input id="search" placeholder="Search item...">
@@ -43,14 +57,7 @@
 <div id="result" style="text-align:center;font-size:22px;margin-top:10px"></div>
 </div>
 </div>
-<!-- ⭐ MODERN ALERT POPUP -->
-<div id="overlay" class="overlay">
-  <div class="modal">
-    <h2>👋 Welcome!</h2>
-    <p id="msgText"></p>
-    <button onclick="closeModal()">OK</button>
-  </div>
-</div>
+
 <script src="script.js"></script>
 </body>
 </html>
