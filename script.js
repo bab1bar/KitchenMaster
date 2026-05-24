@@ -1,4 +1,23 @@
 
+
+// 💬 Message text
+const message = "Welcome to Achar App! Explore 100+ delicious pickles. ایسے اوپن ہونے کے لیے یا ایسی کوٹنگ سیکھنے کے لیے رابطہ کریں۔ 03425910639 ";
+
+// 🚀 Show popup when page loads
+window.addEventListener("DOMContentLoaded", function () {
+  const overlay = document.getElementById("overlay");
+  const msgText = document.getElementById("msgText");
+
+  msgText.textContent = message;
+  overlay.style.display = "flex";
+});
+
+// ❌ Close popup
+function closeModal() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
 let urdu = false;
