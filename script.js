@@ -720,3 +720,25 @@ window.onload = function () {
 //  }
 
 });
+
+
+data.forEach(item => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  const title = document.createElement("h3");
+  title.textContent = item.name;
+
+  const btn = document.createElement("button");
+  btn.textContent = "Health benefits";
+  btn.className = "benefit-btn";
+
+  btn.addEventListener("click", () => {
+    console.log("Clicked:", item.name);
+  });
+
+  card.appendChild(title);
+  card.appendChild(btn);
+
+  container.appendChild(card);
+});
