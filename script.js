@@ -1,7 +1,7 @@
 
 
 // 💬 Message text
-const message = "Welcome to Achar App! Explore 100+ delicious pickles. ایسے اوپن ہونے کے لیے یا ایسی کوٹنگ سیکھنے کے لیے رابطہ کریں۔ 03425910639 ";
+const message = "Welcome to Achar App! Explore 100+ delicious pickles. ایسے ویب ایپ  بنوانے کے لیے یا ایسی کوڈنگ سیکھنے کے لیے رابطہ کریں۔ 03425910639 ";
 
 // 🚀 Show popup when page loads
 window.addEventListener("DOMContentLoaded", function () {
