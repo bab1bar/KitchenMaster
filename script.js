@@ -1,6 +1,7 @@
 
 
-// 💬 Message text
+// 💬
+/* Message text
 const message = "Welcome to Achar App! Explore 100+ delicious pickles. ایسے ویب ایپ  بنوانے کے لیے یا ایسی کوڈنگ سیکھنے کے لیے رابطہ کریں۔ 03425910639 ";
 
 // 🚀 Show popup when page loads
@@ -20,7 +21,40 @@ function closeModal() {
 
 document.addEventListener("DOMContentLoaded", function () {
 
+let urdu = false;*/
+
+
+
+/* =========================
+   POPUP MESSAGE
+========================= */
+
+const message =
+"Welcome to Kitchen Master! Explore 100+ recipes. Web app by Babar Khan.";
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("msgText").textContent = message;
+  document.getElementById("overlay").style.display = "flex";
+
+  // init app
+  show();
+  setupEvents();
+});
+
+
+function closeModal() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+
+/* =========================
+   DATA
+========================= */
+
 let urdu = false;
+
+
+
 
 
 
@@ -725,7 +759,115 @@ const data = [
 
 
 
-const list = document.getElementById("list");
+
+
+
+const data = [
+  { name: "Basmati Rice", urdu: "باسمتی چاول", time: "8-10 min", pressure: "3-4 min", ratio: 1.8, cat: "rice" },
+  { name: "Sella Rice", urdu: "سیلہ چاول", time: "11-12 min", pressure: "5-6 min", ratio: 2.2, cat: "rice" },
+
+  { name: "Dal Masoor", urdu: "مسور دال", time: "20 min", pressure: "6-8 min", ratio: 2, cat: "dal" },
+  { name: "Dal Moong", urdu: "مونگ دال", time: "20 min", pressure: "5-7 min", ratio: 2, cat: "dal" },
+
+  { name: "Chicken", urdu: "چکن", time: "15 min", pressure: "4-6 min", ratio: 1, cat: "meat" },
+
+  { name: "Dates Raita", urdu: "کھجور رائتہ", time: "-", pressure: "-", ratio: 1, cat: "raita" }
+];
+
+
+/* =========================
+   SHOW CARDS (MAIN FIXED)
+========================= */
+
+function show() {
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+
+  const search = document.getElementById("search").value.toLowerCase();
+  const filter = document.getElementById("filter").value;
+
+  let html = "";
+
+  data.forEach(item => {
+    let name = urdu ? item.urdu : item.name;
+
+    if (
+      name.toLowerCase().includes(search) &&
+      (filter === "all" || item.cat === filter)
+    ) {
+      html += `
+        <div class="card">
+          <h3>${name}</h3>
+          ⏱ ${urdu ? "وقت" : "Time"}: ${item.time}<br>
+          ⚡ ${urdu ? "پریشر" : "Pressure"}: ${item.pressure}<br>
+          💧 Ratio: ${item.ratio}
+        </div>
+      `;
+    }
+  });
+
+  list.innerHTML = html;
+}
+
+
+/* =========================
+   CALCULATOR
+========================= */
+
+function calc() {
+  const type = document.getElementById("item").value;
+  const amount = document.getElementById("amount").value;
+
+  if (!amount) return;
+
+  let ratio = 1;
+
+  if (type === "rice") ratio = 1.8;
+  if (type === "dal") ratio = 2;
+  if (type === "meat") ratio = 1;
+  if (type === "chana") ratio = 3;
+  if (type === "dough") ratio = 0.5;
+
+  const result = amount * ratio;
+
+  document.getElementById("result").innerHTML =
+    (urdu ? "پانی: " : "Water: ") + result.toFixed(2);
+}
+
+
+/* =========================
+   LANGUAGE TOGGLE (FIXED)
+========================= */
+
+function toggleLang() {
+  urdu = !urdu;
+
+  document.getElementById("title").innerText =
+    urdu ? "🍳 کچن ماسٹر" : "🍳 Kitchen Master";
+
+  document.getElementById("calcTitle").innerText =
+    urdu ? "🧮 پانی کیلکولیٹر" : "🧮 Water Calculator";
+
+  show();
+}
+
+
+/* =========================
+   EVENTS SETUP (CLEAN)
+========================= */
+
+function setupEvents() {
+  document.getElementById("search").addEventListener("input", show);
+  document.getElementById("filter").addEventListener("change", show);
+}
+
+
+
+
+
+
+
+/*const list = document.getElementById("list");
 
 function show() {
   list.innerHTML = "";
@@ -811,5 +953,5 @@ data.forEach(item => {
   card.appendChild(btn);
 
   container.appendChild(card);
-});
+});*/
 
