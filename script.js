@@ -1,6 +1,7 @@
 
 
-// 💬 Message text
+// 💬
+/* Message text
 const message = "Welcome to Achar App! Explore 100+ delicious pickles. ایسے ویب ایپ  بنوانے کے لیے یا ایسی کوڈنگ سیکھنے کے لیے رابطہ کریں۔ 03425910639 ";
 
 // 🚀 Show popup when page loads
@@ -20,7 +21,40 @@ function closeModal() {
 
 document.addEventListener("DOMContentLoaded", function () {
 
+let urdu = false;*/
+
+
+
+/* =========================
+   POPUP MESSAGE
+========================= */
+
+const message =
+"Welcome to Kitchen Master! Explore 100+ recipes. Web app by Babar Khan.";
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("msgText").textContent = message;
+  document.getElementById("overlay").style.display = "flex";
+
+  // init app
+  show();
+  setupEvents();
+});
+
+
+function closeModal() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+
+/* =========================
+   DATA
+========================= */
+
 let urdu = false;
+
+
+
 
 
 
