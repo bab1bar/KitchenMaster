@@ -1,66 +1,28 @@
 
+// 💬 Message text
+const message =
+"Welcome to Achar App! Explore 100+ delicious pickles. ایسے ویب ایپ بنانے کے لیے یا ایسی کوڈنگ سیکھنے کے لیے رابطہ کریں۔ 03425910639";
 
-// 💬
-/* Message text
-const message = "Welcome to Achar App! Explore 100+ delicious pickles. ایسے ویب ایپ  بنوانے کے لیے یا ایسی کوڈنگ سیکھنے کے لیے رابطہ کریں۔ 03425910639 ";
+// 🌐 language state (global inside app)
+let urdu = false;
 
-// 🚀 Show popup when page loads
-window.addEventListener("DOMContentLoaded", function () {
+// 🚀 Popup on load
+document.addEventListener("DOMContentLoaded", function () {
+
   const overlay = document.getElementById("overlay");
   const msgText = document.getElementById("msgText");
 
-  msgText.textContent = message;
-  overlay.style.display = "flex";
-});
+  if (overlay && msgText) {
+    msgText.textContent = message;
+    overlay.style.display = "flex";
+  }
 
-// ❌ Close popup
-function closeModal() {
-  document.getElementById("overlay").style.display = "none";
-}
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
-let urdu = false;*/
-
-
-
-/* =========================
-   POPUP MESSAGE
-========================= */
-
-const message =
-"Welcome to Kitchen Master! Explore 100+ recipes. Web app by Babar Khan.";
-
-window.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("msgText").textContent = message;
-  document.getElementById("overlay").style.display = "flex";
-
-  // init app
-  show();
-  setupEvents();
-});
-
-
-function closeModal() {
-  document.getElementById("overlay").style.display = "none";
-}
-
-
-/* =========================
-   DATA
-========================= */
-
-let urdu = false;
-
-
-
-
-
-
-
-
-
+  // ❌ close modal
+  window.closeModal = function () {
+    const overlay = document.getElementById("overlay");
+    if (overlay) overlay.style.display = "none";
+  };
+    // 👉 KEEP YOUR HUGE JSON HERE (NO CHANGES)
 const data = [
   // 🍚 RICE
   { name: "Basmati Rice", urdu: "باسمتی چاول", time: "8-10 min", pressure: "3-4 min", ratio: 1.8, cat: "rice" },
@@ -609,126 +571,7 @@ const data = [
   { "name": "Bhindi Do Pyaza", "urdu": "بھنڈی دو پیازہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
   { "name": "Karela Pyaz", "urdu": "کریلا پیاز", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
 
-{ "name": "Mango Pickle", "urdu": "آم کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Mixed Pickle", "urdu": "مکس اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Lemon Pickle", "urdu": "لیموں کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Green Chili Pickle", "urdu": "ہری مرچ کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Red Chili Pickle", "urdu": "لال مرچ کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Garlic Pickle", "urdu": "لہسن کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Carrot Pickle", "urdu": "گاجر کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Turnip Pickle", "urdu": "شلجم کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Radish Pickle", "urdu": "مولی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Onion Pickle", "urdu": "پیاز کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
 
-{ "name": "Cauliflower Pickle", "urdu": "گوبھی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Cucumber Pickle", "urdu": "کھیرے کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Olive Pickle", "urdu": "زیتون کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Ginger Pickle", "urdu": "ادرک کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Amla Pickle", "urdu": "آملہ کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Jackfruit Pickle", "urdu": "کٹہل کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Lotus Root Pickle", "urdu": "کنول ککڑی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Tamarind Pickle", "urdu": "املی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Dates Pickle", "urdu": "کھجور کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Apple Pickle", "urdu": "سیب کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-
-{ "name": "Pear Pickle", "urdu": "ناشپاتی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Peach Pickle", "urdu": "آڑو کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Plum Pickle", "urdu": "آلو بخارا کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Cherry Pickle", "urdu": "چیری کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Pineapple Pickle", "urdu": "انناس کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Papaya Pickle", "urdu": "پپیتا کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Banana Pickle", "urdu": "کیلے کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Guava Pickle", "urdu": "امرود کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Coconut Pickle", "urdu": "ناریل کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Tomato Pickle", "urdu": "ٹماٹر کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-
-{ "name": "Brinjal Pickle", "urdu": "بینگن کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Bitter Gourd Pickle", "urdu": "کریلے کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Bottle Gourd Pickle", "urdu": "لوکی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Pumpkin Pickle", "urdu": "کدو کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Sweet Lemon Pickle", "urdu": "میٹھے لیموں کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Stuffed Chili Pickle", "urdu": "بھرواں مرچ کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Raw Turmeric Pickle", "urdu": "کچی ہلدی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Beetroot Pickle", "urdu": "چقندر کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Capsicum Pickle", "urdu": "شملہ مرچ کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Bean Pickle", "urdu": "بینز کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-
-{ "name": "Pea Pickle", "urdu": "مٹر کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Corn Pickle", "urdu": "مکئی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Spinach Pickle", "urdu": "پالک کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Mint Pickle", "urdu": "پودینے کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Coriander Pickle", "urdu": "دھنیا کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Fenugreek Pickle", "urdu": "میتھی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Drumstick Pickle", "urdu": "سہانجنا کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Snake Gourd Pickle", "urdu": "چچنڈا کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Parwal Pickle", "urdu": "پروال کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Tinda Pickle", "urdu": "ٹنڈے کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-
-{ "name": "Fish Pickle", "urdu": "مچھلی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Chicken Pickle", "urdu": "چکن کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Prawn Pickle", "urdu": "جھینگے کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Mutton Pickle", "urdu": "مٹن کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Egg Pickle", "urdu": "انڈے کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Green Mango Pickle", "urdu": "کچے آم کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Dry Mango Pickle", "urdu": "سوکھے آم کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Hot Mango Pickle", "urdu": "تیز آم کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Sweet Mango Pickle", "urdu": "میٹھا آم کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Punjabi Pickle", "urdu": "پنجابی اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-
-{ "name": "Hyderabadi Pickle", "urdu": "حیدرآبادی اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Sindhi Pickle", "urdu": "سندھی اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Garlic Chili Pickle", "urdu": "لہسن مرچ اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Lemon Chili Pickle", "urdu": "لیموں مرچ اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Stuffed Lemon Pickle", "urdu": "بھرواں لیموں اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Stuffed Mango Pickle", "urdu": "بھرواں آم اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Village Style Pickle", "urdu": "دیسی اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Oil Pickle", "urdu": "تیل والا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Vinegar Pickle", "urdu": "سرکے والا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Spicy Pickle", "urdu": "مصالحے دار اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-
-{ "name": "Sweet Pickle", "urdu": "میٹھا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Hot Chili Garlic Pickle", "urdu": "تیز مرچ لہسن اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Stuffed Red Chili Pickle", "urdu": "بھرواں لال مرچ اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Stuffed Green Chili Pickle", "urdu": "بھرواں ہری مرچ اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Dry Lemon Pickle", "urdu": "خشک لیموں اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Dry Garlic Pickle", "urdu": "خشک لہسن اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Carrot Chili Pickle", "urdu": "گاجر مرچ اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Mixed Vegetable Pickle", "urdu": "مکس سبزی اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Seasonal Pickle", "urdu": "موسمی اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Homemade Pickle", "urdu": "گھریلو اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-
-{ "name": "Traditional Pickle", "urdu": "روایتی اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Desi Mango Pickle", "urdu": "دیسی آم اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Kashmiri Pickle", "urdu": "کشمیری اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "South Indian Pickle", "urdu": "ساؤتھ انڈین اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "North Indian Pickle", "urdu": "نارتھ انڈین اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Instant Pickle", "urdu": "فوری اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Sun Dried Pickle", "urdu": "دھوپ والا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Stuffed Carrot Pickle", "urdu": "بھرواں گاجر اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Stuffed Turnip Pickle", "urdu": "بھرواں شلجم اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Stuffed Radish Pickle", "urdu": "بھرواں مولی اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-
-{ "name": "Chili Lemon Garlic Pickle", "urdu": "مرچ لیموں لہسن اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Green Olive Pickle", "urdu": "سبز زیتون اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Black Olive Pickle", "urdu": "کالے زیتون اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Wild Lemon Pickle", "urdu": "جنگلی لیموں اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Baby Mango Pickle", "urdu": "چھوٹے آم کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Raw Papaya Pickle", "urdu": "کچے پپیتے کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Raw Banana Pickle", "urdu": "کچے کیلے کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Turmeric Ginger Pickle", "urdu": "ہلدی ادرک اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Curry Leaf Pickle", "urdu": "کڑی پتے کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Lotus Stem Pickle", "urdu": "بھین کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-
-{ "name": "White Onion Pickle", "urdu": "سفید پیاز اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Red Onion Pickle", "urdu": "لال پیاز اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Mini Cucumber Pickle", "urdu": "چھوٹے کھیرے کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Green Tomato Pickle", "urdu": "کچے ٹماٹر کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Roasted Chili Pickle", "urdu": "بھنی مرچ کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Smoked Mango Pickle", "urdu": "دھواں دار آم اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Dry Fruit Pickle", "urdu": "خشک میوہ اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Herbal Pickle", "urdu": "جڑی بوٹیوں کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Stuffed Garlic Pickle", "urdu": "بھرواں لہسن اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
-{ "name": "Royal Mixed Pickle", "urdu": "شاہی مکس اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
 
 
 
@@ -753,113 +596,76 @@ const data = [
 { "name": "Strawberry Raita", "urdu": "اسٹرابیری رائتہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "raita" },
 { "name": "Papaya Raita", "urdu": "پپیتا رائتہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "raita" },
 { "name": "Watermelon Raita", "urdu": "تربوز رائتہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "raita" },
-{ "name": "Dates Raita", "urdu": "کھجور رائتہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "raita" }
-]
+{ "name": "Dates Raita", "urdu": "کھجور رائتہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "raita" },
 
 
+{ "name": "Rusk", "urdu": "رسک", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Cake Rusk", "urdu": "کیک رسک", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Marie Biscuit", "urdu": "ماری بسکٹ", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Digestive Biscuit", "urdu": "ڈائجسٹو بسکٹ", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Butter Cookies", "urdu": "بٹر کوکیز", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Khari", "urdu": "خاری", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Mathri", "urdu": "مٹھری", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Namak Pare", "urdu": "نمک پارے", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Shakar Pare", "urdu": "شکر پارے", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Tea Cake", "urdu": "ٹی کیک", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Fruit Cake", "urdu": "فروٹ کیک", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Muffin", "urdu": "مفن", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Scones", "urdu": "اسکون", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Croissant", "urdu": "کروسان", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Cream Roll", "urdu": "کریم رول", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Chicken Patties", "urdu": "چکن پیٹیز", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Vegetable Patties", "urdu": "ویج پیٹیز", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Finger Sandwich", "urdu": "فنگر سینڈوچ", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Cheese Sandwich", "urdu": "چیز سینڈوچ", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+{ "name": "Samosa", "urdu": "سموسہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" }
+  ];
 
-
-
-
-
-const data = [
-  { name: "Basmati Rice", urdu: "باسمتی چاول", time: "8-10 min", pressure: "3-4 min", ratio: 1.8, cat: "rice" },
-  { name: "Sella Rice", urdu: "سیلہ چاول", time: "11-12 min", pressure: "5-6 min", ratio: 2.2, cat: "rice" },
-
-  { name: "Dal Masoor", urdu: "مسور دال", time: "20 min", pressure: "6-8 min", ratio: 2, cat: "dal" },
-  { name: "Dal Moong", urdu: "مونگ دال", time: "20 min", pressure: "5-7 min", ratio: 2, cat: "dal" },
-
-  { name: "Chicken", urdu: "چکن", time: "15 min", pressure: "4-6 min", ratio: 1, cat: "meat" },
-
-  { name: "Dates Raita", urdu: "کھجور رائتہ", time: "-", pressure: "-", ratio: 1, cat: "raita" }
-];
-
-
-/* =========================
-   SHOW CARDS (MAIN FIXED)
-========================= */
-
-function show() {
   const list = document.getElementById("list");
-  list.innerHTML = "";
 
-  const search = document.getElementById("search").value.toLowerCase();
-  const filter = document.getElementById("filter").value;
+  // 🧾 RENDER FUNCTION
+  function show() {
+    if (!list) return;
 
-  let html = "";
+    list.innerHTML = "";
 
-  data.forEach(item => {
-    let name = urdu ? item.urdu : item.name;
+    const search = document.getElementById("search");
+    const filter = document.getElementById("filter");
 
-    if (
-      name.toLowerCase().includes(search) &&
-      (filter === "all" || item.cat === filter)
-    ) {
-      html += `
-        <div class="card">
-          <h3>${name}</h3>
-          ⏱ ${urdu ? "وقت" : "Time"}: ${item.time}<br>
-          ⚡ ${urdu ? "پریشر" : "Pressure"}: ${item.pressure}<br>
-          💧 Ratio: ${item.ratio}
-        </div>
-      `;
-    }
-  });
+    let s = search ? search.value.toLowerCase() : "";
+    let f = filter ? filter.value : "all";
 
-  list.innerHTML = html;
-}
+    data.forEach(i => {
 
+      let name = urdu ? i.urdu : i.name;
 
-/* =========================
-   CALCULATOR
-========================= */
+      if (
+        name.toLowerCase().includes(s) &&
+        (f === "all" || i.cat === f)
+      ) {
+        list.innerHTML += `
+          <div class="card">
+            <h3>${name}</h3>
+            ⏱ ${urdu ? "وقت" : "Time"}: ${i.time}<br>
+            ⚡ ${urdu ? "پریشر" : "Pressure"}: ${i.pressure}<br>
+            💧 Ratio: ${i.ratio}
+          </div>
+        `;
+      }
+    });
+  }
 
-function calc() {
-  const type = document.getElementById("item").value;
-  const amount = document.getElementById("amount").value;
+  // 📡 LIVE SEARCH
+  const searchInput = document.getElementById("search");
+  const filterInput = document.getElementById("filter");
 
-  if (!amount) return;
+  if (searchInput) searchInput.addEventListener("input", show);
+  if (filterInput) filterInput.addEventListener("change", show);
 
-  let ratio = 1;
-
-  if (type === "rice") ratio = 1.8;
-  if (type === "dal") ratio = 2;
-  if (type === "meat") ratio = 1;
-  if (type === "chana") ratio = 3;
-  if (type === "dough") ratio = 0.5;
-
-  const result = amount * ratio;
-
-  document.getElementById("result").innerHTML =
-    (urdu ? "پانی: " : "Water: ") + result.toFixed(2);
-}
-
-
-/* =========================
-   LANGUAGE TOGGLE (FIXED)
-========================= */
-
-function toggleLang() {
-  urdu = !urdu;
-
-  document.getElementById("title").innerText =
-    urdu ? "🍳 کچن ماسٹر" : "🍳 Kitchen Master";
-
-  document.getElementById("calcTitle").innerText =
-    urdu ? "🧮 پانی کیلکولیٹر" : "🧮 Water Calculator";
-
+  // ▶ first render
   show();
-}
 
-
-/* =========================
-   EVENTS SETUP (CLEAN)
-========================= */
-
-function setupEvents() {
-  document.getElementById("search").addEventListener("input", show);
-  document.getElementById("filter").addEventListener("change", show);
-}
+});
 
 
 
@@ -867,91 +673,81 @@ function setupEvents() {
 
 
 
-/*const list = document.getElementById("list");
-
-function show() {
-  list.innerHTML = "";
-
-  let s = document.getElementById("search").value.toLowerCase();
-  let f = document.getElementById("filter").value;
-
-  data.forEach(i => {
-    let name = urdu ? i.urdu : i.name;
-
-    if (name.toLowerCase().includes(s) && (f === "all" || i.cat === f)) {
-      list.innerHTML += `
-        <div class="card">
-          <h3>${name}</h3>
-          ⏱ ${urdu ? "وقت" : "Time"}: ${i.time}<br>
-          ⚡ ${urdu ? "پریشر" : "Pressure"}: ${i.pressure}<br>
-          💧 Ratio: ${i.ratio}
-        </div>
-      `;
-    }
-  });
-}
-
-function calc() {
-  let t = document.getElementById("item").value;
-  let a = document.getElementById("amount").value;
-
-  if (!a) return;
-
-  let r = 1;
-  if (t === "rice") r = 1.8;
-  if (t === "dal") r = 2;
-  if (t === "meat") r = 1;
-  if (t === "chana") r = 3;
-  if (t === "dough") r = 0.5;
-
-  let res = a * r;
-
-  document.getElementById("result").innerHTML =
-    (urdu ? "پانی: " : "Water: ") + res.toFixed(2);
-}
-
-function toggleLang() {
-  urdu = !urdu;
-
-  document.getElementById("title").innerText =
-    urdu ? "🍳 کچن ماسٹر" : "🍳 Kitchen Master";
-
-  document.getElementById("calcTitle").innerText =
-    urdu ? "🧮 پانی کیلکولیٹر" : "🧮 Water Calculator";
-
-  show();
-}
-
-window.onload = function () {
-  document.getElementById("search").addEventListener("input", show);
-  document.getElementById("filter").addEventListener("change", show);
-  show();
-};
 
 
 
-const container = document.getElementById("card");
-  
 
-// 2. THIS is where your code goes 👇
-data.forEach(item => {
-  const card = document.createElement("div");
-  card.className = "card";
 
-  const title = document.createElement("h3");
-  title.textContent = item.name;
 
-  const btn = document.createElement("button");
-  btn.textContent = "Health benefits";
-  btn.className = "benefit-btn";
 
-  btn.addEventListener("click", () => {
-    console.log("Clicked:", item.name);
-  });
 
-  card.appendChild(title);
-  card.appendChild(btn);
 
-  container.appendChild(card);
-});*/
 
+
+
+
+
+
+
+
+
+// const list = document.getElementById("list");
+
+// function show() {
+//   list.innerHTML = "";
+
+//   let s = document.getElementById("search").value.toLowerCase();
+//   let f = document.getElementById("filter").value;
+
+//   data.forEach(i => {
+//     let name = urdu ? i.urdu : i.name;
+
+//     if (name.toLowerCase().includes(s) && (f === "all" || i.cat === f)) {
+//       list.innerHTML += `
+//         <div class="card">
+//           <h3>${name}</h3>
+//           ⏱ ${urdu ? "وقت" : "Time"}: ${i.time}<br>
+//           ⚡ ${urdu ? "پریشر" : "Pressure"}: ${i.pressure}<br>
+//           💧 Ratio: ${i.ratio}
+//         </div>
+//       `;
+//     }
+//   });
+// }
+
+// function calc() {
+//   let t = document.getElementById("item").value;
+//   let a = document.getElementById("amount").value;
+
+//   if (!a) return;
+
+//   let r = 1;
+//   if (t === "rice") r = 1.8;
+//   if (t === "dal") r = 2;
+//   if (t === "meat") r = 1;
+//   if (t === "chana") r = 3;
+//   if (t === "dough") r = 0.5;
+
+//   let res = a * r;
+
+//   document.getElementById("result").innerHTML =
+//     (urdu ? "پانی: " : "Water: ") + res.toFixed(2);
+// }
+
+// function toggleLang() {
+//   urdu = !urdu;
+
+//   document.getElementById("title").innerText =
+//     urdu ? "🍳 کچن ماسٹر" : "🍳 Kitchen Master";
+
+//   document.getElementById("calcTitle").innerText =
+//     urdu ? "🧮 پانی کیلکولیٹر" : "🧮 Water Calculator";
+
+//   show();
+// }
+
+// window.onload = function () {
+//   document.getElementById("search").addEventListener("input", show);
+//   document.getElementById("filter").addEventListener("change", show);
+//   show();
+// };
