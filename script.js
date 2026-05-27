@@ -1,7 +1,7 @@
 
-// 💬 Message text
-const message =
-"Welcome to Achar App! Explore 100+ delicious pickles. ایسے ویب ایپ بنانے کے لیے یا ایسی کوڈنگ سیکھنے کے لیے رابطہ کریں۔ 03425910639";
+// // 💬 Message text
+// const message =
+// "Welcome to Achar App! Explore 100+ delicious pickles. ایسے ویب ایپ بنانے کے لیے یا ایسی کوڈنگ سیکھنے کے لیے رابطہ کریں۔ 03425910639";
 
 // 🌐 language state (global inside app)
 let urdu = false;
