@@ -25,8 +25,33 @@ document.addEventListener("DOMContentLoaded", function () {
     // 👉 KEEP YOUR HUGE JSON HERE (NO CHANGES)
 const data = [
   // 🍚 RICE
-  { name: "Basmati Rice", urdu: "باسمتی چاول", time: "8-10 min", pressure: "3-4 min", ratio: 1.8, cat: "rice" },
-  { name: "Sella Rice", urdu: "سیلہ چاول", time: "11-12 min", pressure: "5-6 min", ratio: 2.2, cat: "rice" },
+  {
+    name: "Basmati Rice",
+    urdu: "باسمتی چاول",
+    time: "8-10 min",
+    pressure: "3-4 min",
+    ratio: 1.8,
+    cat: "rice",
+
+    recipe: "Wash rice first",
+    benefits: "Good energy food",
+    tips: "Do not overcook",
+    video: "https://youtube.com"
+  },
+
+  {
+    name: "Sella Rice",
+    urdu: "سیلہ چاول",
+    time: "11-12 min",
+    pressure: "5-6 min",
+    ratio: 2.2,
+    cat: "rice",
+
+    recipe: "Soak before cooking",
+    benefits: "Filling and fluffy",
+    tips: "Needs more water",
+    video: "https://youtube.com"
+  },
   { name: "Pulao Rice", urdu: "پلاؤ چاول", time: "10 min", pressure: "4 min", ratio: 1.75, cat: "rice" },
   { name: "Boiled Rice", urdu: "ابلے چاول", time: "10 min", pressure: "3 min", ratio: 2, cat: "rice" },
   { name: "Fried Rice", urdu: "فرائیڈ رائس", time: "12 min", pressure: "-", ratio: 1.5, cat: "rice" },
@@ -618,7 +643,355 @@ const data = [
 { "name": "Vegetable Patties", "urdu": "ویج پیٹیز", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
 { "name": "Finger Sandwich", "urdu": "فنگر سینڈوچ", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
 { "name": "Cheese Sandwich", "urdu": "چیز سینڈوچ", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
-{ "name": "Samosa", "urdu": "سموسہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" }
+{ "name": "Samosa", "urdu": "سموسہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+
+
+  { "name": "Rusk", "urdu": "رسک", "time": "-", "pressure": "-", "ratio": 1, "cat": "tea_snack" },
+  { "name": "Cake Rusk", "urdu": "کیک رسک", "time": "-", "pressure": "-", "ratio": 1, "cat": "tea_snack" },
+  { "name": "Marie Biscuit", "urdu": "ماری بسکٹ", "time": "-", "pressure": "-", "ratio": 1, "cat": "tea_snack" },
+  { "name": "Digestive Biscuit", "urdu": "ڈائجسٹو بسکٹ", "time": "-", "pressure": "-", "ratio": 1, "cat": "tea_snack" },
+  { "name": "Butter Cookies", "urdu": "بٹر کوکیز", "time": "-", "pressure": "-", "ratio": 1, "cat": "tea_snack" },
+  { "name": "Khari", "urdu": "خاری", "time": "-", "pressure": "-", "ratio": 1, "cat": "bakery" },
+  { "name": "Mathri", "urdu": "مٹھری", "time": "-", "pressure": "-", "ratio": 1, "cat": "traditional_snack" },
+  { "name": "Namak Pare", "urdu": "نمک پارے", "time": "-", "pressure": "-", "ratio": 1, "cat": "traditional_snack" },
+  { "name": "Shakar Pare", "urdu": "شکر پارے", "time": "-", "pressure": "-", "ratio": 1, "cat": "sweet_snack" },
+  { "name": "Tea Cake", "urdu": "ٹی کیک", "time": "-", "pressure": "-", "ratio": 1, "cat": "cake" },
+
+  { "name": "Fruit Cake", "urdu": "فروٹ کیک", "time": "-", "pressure": "-", "ratio": 1, "cat": "cake" },
+  { "name": "Muffin", "urdu": "مفن", "time": "-", "pressure": "-", "ratio": 1, "cat": "cake" },
+  { "name": "Croissant", "urdu": "کروسان", "time": "-", "pressure": "-", "ratio": 1, "cat": "bakery" },
+  { "name": "Cream Roll", "urdu": "کریم رول", "time": "-", "pressure": "-", "ratio": 1, "cat": "bakery" },
+  { "name": "Cupcake", "urdu": "کپ کیک", "time": "-", "pressure": "-", "ratio": 1, "cat": "cake" },
+
+  { "name": "Vegetable Patties", "urdu": "ویج پیٹیز", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+  { "name": "Chicken Patties", "urdu": "چکن پیٹیز", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+
+  { "name": "Finger Sandwich", "urdu": "فنگر سینڈوچ", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+  { "name": "Cheese Sandwich", "urdu": "چیز سینڈوچ", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+  { "name": "Egg Sandwich", "urdu": "ایگ سینڈوچ", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+
+  { "name": "Samosa", "urdu": "سموسہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+  { "name": "Chicken Samosa", "urdu": "چکن سموسہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+  { "name": "Pakora", "urdu": "پکوڑا", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+  { "name": "Onion Pakora", "urdu": "پیاز پکوڑا", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+  { "name": "Bread Pakora", "urdu": "بریڈ پکوڑا", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+
+  { "name": "Shami Kebab", "urdu": "شامی کباب", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+  { "name": "Aloo Tikki", "urdu": "آلو ٹکی", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+  { "name": "Spring Roll", "urdu": "اسپرنگ رول", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+
+  { "name": "Paratha", "urdu": "پراٹھا", "time": "-", "pressure": "-", "ratio": 1, "cat": "bread" },
+  { "name": "Bun Maska", "urdu": "بن مکھن", "time": "-", "pressure": "-", "ratio": 1, "cat": "bread" },
+  { "name": "Masala Toast", "urdu": "مسالہ ٹوسٹ", "time": "-", "pressure": "-", "ratio": 1, "cat": "bread" },
+
+  { "name": "Nimco", "urdu": "نمکو", "time": "-", "pressure": "-", "ratio": 1, "cat": "snack" },
+  { "name": "Roasted Chana", "urdu": "بھنے چنے", "time": "-", "pressure": "-", "ratio": 1, "cat": "healthy" },
+  { "name": "Masala Peanuts", "urdu": "مسالہ مونگ پھلی", "time": "-", "pressure": "-", "ratio": 1, "cat": "healthy" },
+
+  { "name": "Naan Khatai", "urdu": "نان ختائی", "time": "-", "pressure": "-", "ratio": 1, "cat": "cookie" },
+  { "name": "Jeera Biscuit", "urdu": "زیرہ بسکٹ", "time": "-", "pressure": "-", "ratio": 1, "cat": "cookie" },
+
+
+
+
+
+
+
+  { "name": "Mango Pickle", "urdu": "آم کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Lemon Pickle", "urdu": "لیموں کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Green Chili Pickle", "urdu": "ہری مرچ کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Mixed Pickle", "urdu": "مکس اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Garlic Pickle", "urdu": "لہسن کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Carrot Pickle", "urdu": "گاجر کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Cauliflower Pickle", "urdu": "گوبھی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Cucumber Pickle", "urdu": "کھیرا کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Radish Pickle", "urdu": "مولی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Green Mango Pickle", "urdu": "کچے آم کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+
+{ "name": "Apple Pickle", "urdu": "سیب کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Peach Pickle", "urdu": "آڑو کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Plum Pickle", "urdu": "آلو بخارا کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Grape Pickle", "urdu": "انگور کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Pineapple Pickle", "urdu": "انناس کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Banana Flower Pickle", "urdu": "کیلے کے پھول کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+
+{ "name": "Beetroot Pickle", "urdu": "چقندر کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Okra Pickle", "urdu": "بھنڈی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Eggplant Pickle", "urdu": "بینگن کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Green Beans Pickle", "urdu": "لوبیا کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Turnip Pickle", "urdu": "شلجم کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Ginger Pickle", "urdu": "ادرک کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+
+{ "name": "Amla Pickle", "urdu": "آملہ کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Ker Pickle", "urdu": "کیر کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Lasora Pickle", "urdu": "لیسوڑے کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Tinda Pickle", "urdu": "ٹنڈے کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Bitter Gourd Pickle", "urdu": "کریلے کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+
+{ "name": "Olive Pickle", "urdu": "زیتون کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Black Olive Pickle", "urdu": "کالے زیتون کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Green Olive Pickle", "urdu": "سبز زیتون کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+
+{ "name": "Dill Cucumber Pickle", "urdu": "سویا کھیرا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Pickled Jalapeno", "urdu": "جالاپینو اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Pickled Onion", "urdu": "پیاز کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Pickled Cabbage", "urdu": "بند گوبھی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+
+{ "name": "Kimchi", "urdu": "کمچی (کوریائی اچار بند گوبھی)", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Sauerkraut", "urdu": "ساورکراوٹ (کھٹی بند گوبھی)", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Giardiniera", "urdu": "اٹالین سبزیوں کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Cornichons", "urdu": "فرانسیسی چھوٹے اچار کھیرا", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+
+{ "name": "Pickled Beet Sticks", "urdu": "چقندر اسٹکس اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Pickled Carrot Sticks", "urdu": "گاجر اسٹکس اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Pickled Radish Slices", "urdu": "مولی سلائس اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Pickled Garlic Cloves", "urdu": "لہسن کے جوئے اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+
+{ "name": "Spicy Mango Pickle", "urdu": "تیز آم کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Sweet Mango Pickle", "urdu": "میٹھا آم کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Dry Mango Pickle", "urdu": "خشک آم کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+
+{ "name": "Chili Garlic Pickle", "urdu": "مرچ لہسن اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Mustard Oil Pickle Mix", "urdu": "سرسوں کے تیل والا مکس اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+
+{ "name": "Pickled Cherry", "urdu": "چیری کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Pickled Pear", "urdu": "ناشپاتی کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Pickled Pineapple Rings", "urdu": "انناس رنگ اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+
+{ "name": "Mixed Vegetable Pickle", "urdu": "مخلوط سبزیوں کا اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+{ "name": "Street Style Pickle", "urdu": "اسٹریٹ اسٹائل اچار", "time": "-", "pressure": "-", "ratio": 1, "cat": "pickle" },
+
+
+
+
+  { "name": "Baingan Bharta", "urdu": "بینگن کا بھرتا", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Aloo Bhujia", "urdu": "آلو کی بھجیا", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Bhindi Masala", "urdu": "بھنڈی مصالحہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Karela Fry", "urdu": "کریلا فرائی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Shaljam Bhujia", "urdu": "شلجم کی بھجیا", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Aloo Gobhi", "urdu": "آلو گوبھی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Tori Fry", "urdu": "توری فرائی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Lauki Sabzi", "urdu": "لوکی کی سبزی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Mix Vegetable Curry", "urdu": "مکس سبزی سالن", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Palak Aloo", "urdu": "پالک آلو", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Palak Paneer", "urdu": "پالک پنیر", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Methi Aloo", "urdu": "میتھی آلو", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Matar Aloo", "urdu": "مٹر آلو", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Chana Dal Lauki", "urdu": "چنے کی دال لوکی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Kaddu Sabzi", "urdu": "کدو کی سبزی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Aloo Tamatar", "urdu": "آلو ٹماٹر", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Bhindi Fry", "urdu": "بھنڈی فرائی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Karela Masala", "urdu": "کریلا مصالحہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Tinda Masala", "urdu": "ٹنڈا مصالحہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Arvi Fry", "urdu": "اروی فرائی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Arvi Masala", "urdu": "اروی مصالحہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Palak Sabzi", "urdu": "پالک سبزی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Sarson Ka Saag", "urdu": "سرسوں کا ساگ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Bathua Saag", "urdu": "بتھوا ساگ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Kaddu Chana", "urdu": "کدو چنا", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Chana Masala", "urdu": "چنا مصالحہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Rajma Curry", "urdu": "راجما سالن", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Daal Tadka", "urdu": "دال تڑکا", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Masoor Dal", "urdu": "مسور دال", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Moong Dal", "urdu": "مونگ دال", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Chana Dal", "urdu": "چنے کی دال", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Mix Dal", "urdu": "مکس دال", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Aloo Methi", "urdu": "آلو میتھی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Gobhi Masala", "urdu": "گوبھی مصالحہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Gobhi Fry", "urdu": "گوبھی فرائی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Capsicum Aloo", "urdu": "شملہ مرچ آلو", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Capsicum Masala", "urdu": "شملہ مرچ مصالحہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Baingan Aloo", "urdu": "بینگن آلو", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Baingan Curry", "urdu": "بینگن سالن", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Tori Aloo", "urdu": "توری آلو", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Lauki Kofta", "urdu": "لوکی کوفتہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Vegetable Kofta", "urdu": "سبزی کوفتہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Paneer Butter Masala", "urdu": "پنیر بٹر مصالحہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Shahi Paneer", "urdu": "شاہی پنیر", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Paneer Bhurji", "urdu": "پنیر بھرجی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Vegetable Karahi", "urdu": "سبزی کڑاہی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Vegetable Jalfrezi", "urdu": "سبزی جلفریزی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Aloo Baingan Karahi", "urdu": "آلو بینگن کڑاہی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Bhindi Do Pyaza", "urdu": "بھنڈی دو پیازہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Karela Pyaz", "urdu": "کریلا پیاز", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Tinda Aloo", "urdu": "ٹنڈا آلو", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Gawar Phali", "urdu": "گوار پھلی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Sem Phali", "urdu": "سیم پھلی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Mixed Saag", "urdu": "مکس ساگ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Spinach Corn", "urdu": "پالک مکئی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Corn Masala", "urdu": "مکئی مصالحہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Aloo Corn", "urdu": "آلو مکئی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Vegetable Pulao", "urdu": "سبزی پلاؤ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Vegetable Biryani", "urdu": "سبزی بریانی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Khichdi", "urdu": "کھچڑی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Masala Khichdi", "urdu": "مصالحہ کھچڑی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Vegetable Fried Rice", "urdu": "سبزی فرائیڈ رائس", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Vegetable Soup", "urdu": "سبزی سوپ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Tomato Soup", "urdu": "ٹماٹر سوپ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Palak Soup", "urdu": "پالک سوپ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Pumpkin Soup", "urdu": "کدو سوپ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Carrot Peas", "urdu": "گاجر مٹر", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Beans Masala", "urdu": "بینز مصالحہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Beans Aloo", "urdu": "بینز آلو", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Turnip Curry", "urdu": "شلجم سالن", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Radish Bhujia", "urdu": "مولی بھجیا", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Lobia Curry", "urdu": "لوبیا سالن", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Black Chana Curry", "urdu": "کالا چنا سالن", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "White Beans Curry", "urdu": "سفید لوبیا سالن", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Vegetable Handi", "urdu": "سبزی ہانڈی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Vegetable Qorma", "urdu": "سبزی قورمہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Stuffed Karela", "urdu": "بھرا ہوا کریلا", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Stuffed Bhindi", "urdu": "بھری بھنڈی", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Stuffed Capsicum", "urdu": "بھری شملہ مرچ", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Vegetable Cutlets", "urdu": "سبزی کٹلٹس", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+  { "name": "Vegetable Pakora", "urdu": "سبزی پکوڑے", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Onion Pakora", "urdu": "پیاز پکوڑا", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Spinach Pakora", "urdu": "پالک پکوڑا", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Potato Pakora", "urdu": "آلو پکوڑا", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+  { "name": "Mixed Pakora", "urdu": "مکس پکوڑا", "time": "-", "pressure": "-", "ratio": 1, "cat": "vegetable" },
+
+
+{ "name": "Chapati", "urdu": "چپاتی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+{ "name": "Tandoori Roti", "urdu": "تندوری روٹی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+{ "name": "Khamiri Roti", "urdu": "خمیری روٹی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+{ "name": "Makki Roti", "urdu": "مکئی روٹی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+{ "name": "Bajra Roti", "urdu": "باجرہ روٹی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+{ "name": "Missi Roti", "urdu": "مسی روٹی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+{ "name": "Besan Roti", "urdu": "بیسن روٹی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+{ "name": "Patiri Roti", "urdu": "پٹیری روٹی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+{ "name": "Roomali Roti", "urdu": "رومالی روٹی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+{ "name": "Sheermal", "urdu": "شیرمال", "time": "-", "pressure": "-", "ratio": 1, "cat": "bread" },
+
+{ "name": "Taftan", "urdu": "تافتان", "time": "-", "pressure": "-", "ratio": 1, "cat": "naan" },
+{ "name": "Plain Naan", "urdu": "سادہ نان", "time": "-", "pressure": "-", "ratio": 1, "cat": "naan" },
+{ "name": "Butter Naan", "urdu": "بٹر نان", "time": "-", "pressure": "-", "ratio": 1, "cat": "naan" },
+{ "name": "Garlic Naan", "urdu": "لہسن نان", "time": "-", "pressure": "-", "ratio": 1, "cat": "naan" },
+{ "name": "Roghni Naan", "urdu": "روغنی نان", "time": "-", "pressure": "-", "ratio": 1, "cat": "naan" },
+{ "name": "Kulcha", "urdu": "کلچہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "naan" },
+{ "name": "Qeema Naan", "urdu": "قیمہ نان", "time": "-", "pressure": "-", "ratio": 1, "cat": "naan" },
+{ "name": "Chicken Naan", "urdu": "چکن نان", "time": "-", "pressure": "-", "ratio": 1, "cat": "naan" },
+{ "name": "Cheese Naan", "urdu": "چیز نان", "time": "-", "pressure": "-", "ratio": 1, "cat": "naan" },
+{ "name": "Aloo Naan", "urdu": "آلو نان", "time": "-", "pressure": "-", "ratio": 1, "cat": "naan" },
+
+{ "name": "Plain Paratha", "urdu": "سادہ پراٹھا", "time": "-", "pressure": "-", "ratio": 1, "cat": "paratha" },
+{ "name": "Aloo Paratha", "urdu": "آلو پراٹھا", "time": "-", "pressure": "-", "ratio": 1, "cat": "paratha" },
+{ "name": "Gobi Paratha", "urdu": "گوبھی پراٹھا", "time": "-", "pressure": "-", "ratio": 1, "cat": "paratha" },
+{ "name": "Mooli Paratha", "urdu": "مولی پراٹھا", "time": "-", "pressure": "-", "ratio": 1, "cat": "paratha" },
+{ "name": "Keema Paratha", "urdu": "قیمہ پراٹھا", "time": "-", "pressure": "-", "ratio": 1, "cat": "paratha" },
+{ "name": "Anda Paratha", "urdu": "انڈا پراٹھا", "time": "-", "pressure": "-", "ratio": 1, "cat": "paratha" },
+{ "name": "Lacha Paratha", "urdu": "لاچھا پراٹھا", "time": "-", "pressure": "-", "ratio": 1, "cat": "paratha" },
+{ "name": "Methi Paratha", "urdu": "میتھی پراٹھا", "time": "-", "pressure": "-", "ratio": 1, "cat": "paratha" },
+{ "name": "Palak Paratha", "urdu": "پالک پراٹھا", "time": "-", "pressure": "-", "ratio": 1, "cat": "paratha" },
+{ "name": "Malai Paratha", "urdu": "ملائی پراٹھا", "time": "-", "pressure": "-", "ratio": 1, "cat": "paratha" },
+
+{ "name": "Puri", "urdu": "پوری", "time": "-", "pressure": "-", "ratio": 1, "cat": "fried_bread" },
+{ "name": "Bhatura", "urdu": "بھٹورا", "time": "-", "pressure": "-", "ratio": 1, "cat": "fried_bread" },
+{ "name": "Luchi", "urdu": "لوچی", "time": "-", "pressure": "-", "ratio": 1, "cat": "fried_bread" },
+{ "name": "Bakarkhani", "urdu": "باقرخانی", "time": "-", "pressure": "-", "ratio": 1, "cat": "bread" },
+{ "name": "Afghani Naan", "urdu": "افغانی نان", "time": "-", "pressure": "-", "ratio": 1, "cat": "naan" },
+{ "name": "Peshawari Naan", "urdu": "پشاوری نان", "time": "-", "pressure": "-", "ratio": 1, "cat": "naan" },
+{ "name": "Dry Fruit Naan", "urdu": "خشک میوہ نان", "time": "-", "pressure": "-", "ratio": 1, "cat": "naan" },
+{ "name": "Butter Chapati", "urdu": "مکھن چپاتی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+{ "name": "Sweet Roti", "urdu": "میٹھی روٹی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+{ "name": "Jowar Roti", "urdu": "جواری روٹی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+
+{ "name": "Rice Flour Roti", "urdu": "چاول آٹے کی روٹی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+{ "name": "Garlic Butter Roti", "urdu": "گارلک بٹر روٹی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+{ "name": "Masala Roti", "urdu": "مسالہ روٹی", "time": "-", "pressure": "-", "ratio": 1, "cat": "roti" },
+{ "name": "Tortilla", "urdu": "ٹورٹیلا", "time": "-", "pressure": "-", "ratio": 1, "cat": "flatbread" },
+{ "name": "Pita Bread", "urdu": "پیٹا بریڈ", "time": "-", "pressure": "-", "ratio": 1, "cat": "flatbread" },
+{ "name": "Lavash", "urdu": "لاواش", "time": "-", "pressure": "-", "ratio": 1, "cat": "flatbread" },
+{ "name": "Focaccia", "urdu": "فوکاچیا", "time": "-", "pressure": "-", "ratio": 1, "cat": "bread" },
+{ "name": "Garlic Bread", "urdu": "گارلک بریڈ", "time": "-", "pressure": "-", "ratio": 1, "cat": "bread" },
+{ "name": "Milk Bread", "urdu": "ملک بریڈ", "time": "-", "pressure": "-", "ratio": 1, "cat": "bread" },
+{ "name": "Brown Bread", "urdu": "براؤن بریڈ", "time": "-", "pressure": "-", "ratio": 1, "cat": "bread" },
+
+
+{ "name": "Apple", "urdu": "سیب", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Banana", "urdu": "کیلا", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Mango", "urdu": "آم", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Orange", "urdu": "مالٹا", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Grapes", "urdu": "انگور", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Strawberry", "urdu": "اسٹرابیری", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Watermelon", "urdu": "تربوز", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Melon", "urdu": "خربوزہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Pineapple", "urdu": "انناس", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Pomegranate", "urdu": "انار", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Guava", "urdu": "امرود", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Papaya", "urdu": "پپیتا", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Peach", "urdu": "آڑو", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Plum", "urdu": "آلو بخارا", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Cherry", "urdu": "چیری", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Kiwi", "urdu": "کیوی", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Lemon", "urdu": "لیموں", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Lime", "urdu": "نیمبو", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Apricot", "urdu": "خوبانی", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Fig", "urdu": "انجیر", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Date", "urdu": "کھجور", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Coconut", "urdu": "ناریل", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Avocado", "urdu": "ایووکاڈو", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Blueberry", "urdu": "بلو بیری", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Blackberry", "urdu": "بلیک بیری", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Raspberry", "urdu": "رسبیری", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Cranberry", "urdu": "کرین بیری", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Dragon fruit", "urdu": "ڈریگن فروٹ", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Passion fruit", "urdu": "پیشن فروٹ", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Jackfruit", "urdu": "کٹہل", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Lychee", "urdu": "لیچی", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Persimmon", "urdu": "جاپانی پھل", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Star fruit", "urdu": "کرمبولا", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Mulberry", "urdu": "شہتوت", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Soursop", "urdu": "گریویولا", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Custard apple", "urdu": "شریفا", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Gooseberry", "urdu": "آملہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Tamarind", "urdu": "املی", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Grapefruit", "urdu": "چکوترا", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Muskmelon", "urdu": "سردا خربوزہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Honeydew melon", "urdu": "ہنی ڈیو", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Sapodilla", "urdu": "چیکو", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Longan", "urdu": "لانگان", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Rambutan", "urdu": "ریمبوٹان", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Durian", "urdu": "ڈوریان", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Pomelo", "urdu": "پومیلو", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Quince", "urdu": "بہی", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Breadfruit", "urdu": "بریڈ فروٹ", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Cactus pear", "urdu": "انجیر ہندی", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Loquat", "urdu": "لوکاٹ", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Noni", "urdu": "نونی", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Olive", "urdu": "زیتون", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Tomato", "urdu": "ٹماٹر", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Cucumber", "urdu": "کھیرا", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Pumpkin", "urdu": "کدو", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Bitter melon", "urdu": "کریلا", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Bell pepper", "urdu": "شملہ مرچ", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Bael", "urdu": "بیل", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Rose apple", "urdu": "جامرول", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Mangosteen", "urdu": "مینگوسٹین", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Feijoa", "urdu": "فیجوآ", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Yuzu", "urdu": "یوزو", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Karonda", "urdu": "کروندہ", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Blackcurrant", "urdu": "بلیک کرنٹ", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" },
+{ "name": "Açaí", "urdu": "آسائی بیری", "time": "-", "pressure": "-", "ratio": 1, "cat": "fruit" }
+
+
+
+
   ];
 
   const list = document.getElementById("list");
@@ -673,7 +1046,16 @@ const data = [
 
 
 
+const hamburger = document.getElementById("hamburger");
+const sideMenu = document.getElementById("sideMenu");
 
+hamburger.addEventListener("click", () => {
+  sideMenu.style.left = "0";
+});
+
+function closeMenu() {
+  sideMenu.style.left = "-260px";
+}
 
 
 

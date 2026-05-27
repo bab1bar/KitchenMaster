@@ -66,8 +66,8 @@ button {
 /* INPUT STYLE */
 input,
 select {
-  background: rgba(255, 255, 255, 0.08);
-  color: white;
+  background: rgba(25, 3, 153, 0.08);
+  color: rgb(161, 17, 17);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -76,14 +76,15 @@ input::placeholder {
 }
 
 /* =========================
-   BUTTON
+   BUTTON of switch language or toggle language
 ========================= */
 button {
   background: linear-gradient(135deg, #00c853, #00e676);
-  color: white;
+  color: rgb(5, 4, 4);
   font-weight: bold;
   cursor: pointer;
   transition: 0.2s ease;
+  background-color: #413c3c;
 }
 
 button:hover {
@@ -94,14 +95,14 @@ button:hover {
    TOGGLE BUTTON
 ========================= */
 .toggle {
-  background: linear-gradient(135deg, #3b3d41, #f50d19);
+  background: linear-gradient(135deg, #3b3d41, #4e0306);
 }
 
 /* =========================
    CARD
 ========================= */
 .card {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(161, 2, 10, 0.06);
   backdrop-filter: blur(10px);
   padding: 16px;
   margin-top: 12px;
@@ -109,8 +110,15 @@ button:hover {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+
+
+/* heading of every card */
 .card h3 {
   margin-bottom: 10px;
+  background-color: #912c2c;
+  color:rgb(250, 213, 5);
+  border-radius: 10px;
+  text-align: center;
 }
 
 /* =========================
@@ -197,4 +205,48 @@ button:hover {
   button {
     font-size: 15px;
   }
+}
+
+
+
+
+/* ===== HAMBURGER MENU ===== */
+
+.hamburger {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 240px;
+  height: 100%;
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+  transition: 0.3s;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.side-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.side-menu button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
